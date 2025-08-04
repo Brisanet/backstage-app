@@ -1,3 +1,10 @@
-# Projeto de Implementação da Plataforma Backstage
+# [Backstage](https://backstage.io)
 
-Repositório para centralizar estudos, documentação e configurações do projeto de implementação da plataforma Backstage na Brisanet.
+This is your newly scaffolded Backstage App, Good Luck!
+
+To start the app, run:
+
+```sh
+yarn install
+yarn start
+```
