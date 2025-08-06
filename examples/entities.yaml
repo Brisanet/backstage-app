@@ -39,3 +39,144 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: genesys
+  title: Genesys
+  description: Genesys is an application for customer support.
+spec:
+  type: application
+  lifecycle: production
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+---
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: genesys
+  title: Genesys
+  description: Genesys is an application for customer support.
+  annotations:
+    parceiro.endpoints.atendimento-inovacao: |
+      - GET /v1/clients/
+      - POST /v1/clients/register
+spec:
+  type: application
+  lifecycle: production
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: robbu
+  title: Robbu
+  description: Robbu é parceiro que realiza fluxos financeiros via Whatsapp, consumindo a API de atendimento inovação.
+spec:
+  type: application
+  lifecycle: production
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mundiale
+  title: Mundiale
+  description: Mundiale é um parceiro que gera orçamentos e é um consumidor da API de atendimento inovação.
+spec:
+  type: application
+  lifecycle: production
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: site-brisanet
+  title: Site Brisanet
+  description: O site da Brisanet é um consumidor da API de atendimento inovação para geração de orçamentos.
+spec:
+  type: website
+  lifecycle: production
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: vendas-app
+  title: Vendas App
+  description: App de vendas interno para geração de orçamentos.
+spec:
+  type: application
+  lifecycle: planned
+  owner: atendimento
+  consumesApis:
+    - atendimento-inovacao
+
+# Atendimento
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: atendimento
+  title: Sistema de Atendimento
+  description: Agrupamento de serviços relacionados ao atendimento ao cliente
+spec:
+  owner: equipe-inovacao
+
+
+# IRA
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: atendimento-inovacao
+  title: Atendimento Inovação
+  description: Microserviço em Go que expõe APIs para atendimento ao cliente
+  tags:
+    - go
+    - microservice
+  annotations:
+    backstage.io/source-location: url:http://github.com/Brisanet/atendimento-inovacao/
+spec:
+  type: service
+  lifecycle: production
+  owner: equipe-inovacao
+  system: atendimento
+  providesApis:
+    - atendimento-inovacao
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: atendimento-inovacao
+  title: atendimento-inovacao-api
+  description: API para atendimento ao cliente
+spec:
+  type: openapi
+  lifecycle: production
+  owner: equipe-inovacao
+  system: atendimento
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Atendimento Inovação
+      version: 1.0.0
+    paths:
+      /v1/clients:
+        get:
+          summary: Lista clientes
+      /v1/clients/register:
+        post:
+          summary: Registra novo cliente
+---
