@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  backstage:
+    build: .
+    container_name: backstage-local
+    ports:
+      - "7007:7007"
+    volumes:
+      - .:/app
+      - /app/node_modules   # evita sobrescrever node_modules do container
+    environment:
+      - NODE_ENV=development
