@@ -148,6 +148,7 @@ metadata:
     - microservice
   annotations:
     backstage.io/source-location: url:http://github.com/Brisanet/atendimento-inovacao/
+    backstage.io/techdocs-ref: url:https://github.com/Brisanet/atendimento-inovacao/blob/master/server/docs/swagger.yaml
 spec:
   type: service
   lifecycle: production
@@ -179,4 +180,38 @@ spec:
       /v1/clients/register:
         post:
           summary: Registra novo cliente
+
+# ION
 ---
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ion-design-system
+  title: Ion Design System
+  description: Biblioteca Angular com os componentes reutilizáveis do design system institucional.
+  tags:
+    - angular
+    - design-system
+    - library
+    - frontend
+  annotations:
+    github.com/project-slug: brisanet/ion
+  links:
+    - url: https://www.figma.com/design/HwQjnUI5ASA7YYmnahLVQS/Design-System?node-id=0-1&p=f&t=A4kMPxyQQFKYie38-0
+      title: Figma - Design Tokens e Componentes
+      icon: figma
+    - url: https://main--62eab350a45bdb0a5818520e.chromatic.com/
+      title: Storybook - Componentes
+      icon: storybook
+    - url: https://github.com/Brisanet/ion
+      title: Repositório GitHub
+      icon: github
+    - url: https://github.com/Brisanet/ion/actions/workflows/release.yml
+      title: Pipeline CI/CD
+      icon: github
+spec:
+  type: library
+  lifecycle: production
+  owner: equipe-ion
+  system: plataforma-frontend
