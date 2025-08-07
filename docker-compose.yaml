@@ -5,9 +5,10 @@ services:
     build: .
     container_name: backstage-local
     ports:
+      - "3000:3000"
       - "7007:7007"
     volumes:
       - .:/app
-      - /app/node_modules   # evita sobrescrever node_modules do container
+      - /app/node_modules  
     environment:
       - NODE_ENV=development
