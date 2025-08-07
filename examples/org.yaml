@@ -1,4 +1,3 @@
----
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -15,3 +14,113 @@ metadata:
 spec:
   type: team
   children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: brunosilvabrisa
+spec:
+  profile:
+    displayName: Bruno Silva
+    email: bruno.silva@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: AnthonyBarrosBrisaNet
+spec:
+  profile:
+    displayName: Anthony Barros
+    email: anthony.barros@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: aureliobrisa
+spec:
+  profile:
+    displayName: Aurelio Silva
+    email: aurelio.silva@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Breno-silva-brisa
+spec:
+  profile:
+    displayName: Breno Silva
+    email: breno.silva@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: diegoBrisaNet
+spec:
+  profile:
+    displayName: Diego Avelino
+    email: diego.avelino@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: juciersilva
+spec:
+  profile:
+    displayName: Jucier Silva
+    email: jucier.silva@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: vitor-mateus-brisa
+spec:
+  profile:
+    displayName: Vitor Aguiar
+    email: vitor.aguiar@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: iury.nogueira
+spec:
+  profile:
+    displayName: Iury Nogueira
+    email: iury.nogueira@grupobrisanet.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: jackson.martins
+spec:
+  profile:
+    displayName: Jackson Martins
+    email: jackson.martins@grupobrisanet.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: alexandre.junior
+spec:
+  profile:
+    displayName: Alexandre Júnior
+    email: alexandre.junior@timebrisa.com.br
+  memberOf: [guests]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: vinicius.santana
+spec:
+  profile:
+    displayName: Vinicius Santana
+    email: vinicius.santana@timebrisa.com.br
+  memberOf: [guests]

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backstage:
+    build: .
+    container_name: backstage-local
+    ports:
+      - "3000:3000"
+      - "7007:7007"
+    volumes:
+      - .:/app
+      - /app/node_modules  
+    environment:
+      - NODE_ENV=development

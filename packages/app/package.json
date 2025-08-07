@@ -53,6 +53,7 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
+    "@types/react": "^19.1.9",
     "@types/react-dom": "*",
     "cross-env": "^7.0.0"
   },
