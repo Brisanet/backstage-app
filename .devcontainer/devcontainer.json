@@ -12,7 +12,7 @@
   "forwardPorts": [7007],
   "postCreateCommand": "yarn install",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/yarn:1": {}
+    "ghcr.io/devcontainers/features/git:1": {}
+    
   }
 }
