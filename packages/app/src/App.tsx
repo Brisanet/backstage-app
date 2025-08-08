@@ -35,7 +35,7 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
-import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { githubAuthApiRef, googleAuthApiRef } from '@backstage/core-plugin-api';
 
 const app = createApp({
   apis,
@@ -68,6 +68,12 @@ const app = createApp({
           message: 'Sign in with your GitHub account',
           apiRef: githubAuthApiRef,
         },
+        {
+          id: 'google-auth-provider',
+          title: 'Google',
+          message: 'Sign In using Google',
+          apiRef: googleAuthApiRef
+        }
       ]}
       />
     ),
