@@ -29,6 +29,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: brunosilvabrisa
+  annotations: 
+    google.com/email: bruno.silva@timebrisa.com.br
 spec:
   profile:
     displayName: Bruno Silva
@@ -39,6 +41,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: AnthonyBarrosBrisaNet
+  annotations: 
+    google.com/email: anthony.barros@timebrisa.com.br
 spec:
   profile:
     displayName: Anthony Barros
@@ -49,6 +53,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: aureliobrisa
+  annotations: 
+    google.com/email: aurelio.silva@timebrisa.com.br
 spec:
   profile:
     displayName: Aurelio Silva
@@ -59,6 +65,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: Breno-silva-brisa
+  annotations: 
+    google.com/email: breno.silva@timebrisa.com.br
 spec:
   profile:
     displayName: Breno Silva
@@ -69,6 +77,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: diegoBrisaNet
+  annotations: 
+    google.com/email: diego.avelino@timebrisa.com.br
 spec:
   profile:
     displayName: Diego Avelino
@@ -79,6 +89,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: juciersilva
+  annotations: 
+    google.com/email: jucier.silva@timebrisa.com.br
 spec:
   profile:
     displayName: Jucier Silva
@@ -89,6 +101,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: vitor-mateus-brisa
+  annotations: 
+    google.com/email: vitor.aguiar@timebrisa.com.br
 spec:
   profile:
     displayName: Vitor Aguiar
@@ -99,6 +113,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: iurynogueira
+  annotations: 
+    google.com/email: iury.nogueira@grupobrisanet.com.br
 spec:
   profile:
     displayName: Iury Nogueira
@@ -109,6 +125,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: jackson.martins
+  annotations: 
+    google.com/email: jackson.martins@grupobrisanet.com.br
 spec:
   profile:
     displayName: Jackson Martins
@@ -119,6 +137,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: alexandre.junior
+  annotations: 
+    google.com/email: alexandre.junior@timebrisa.com.br
 spec:
   profile:
     displayName: Alexandre Júnior
@@ -129,6 +149,8 @@ apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
   name: vinicius.santana
+  annotations: 
+    google.com/email: vinicius.santana@timebrisa.com.br
 spec:
   profile:
     displayName: Vinicius Santana
