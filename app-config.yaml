@@ -79,8 +79,8 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
-    - type: file
-      target: ../../examples/entities.yaml
+    - type: url
+      target: https://github.com/diegoBrisaNet/brisaclient/blob/main/catalog-info.yaml
 
     # Local example template
     - type: file
