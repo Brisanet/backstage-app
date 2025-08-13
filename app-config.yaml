@@ -68,8 +68,8 @@ auth:
     guest: {}
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        clientId: Ov23liPMqRqprYI1uN6I
+        clientSecret: 11488742da2fd1771032b856cf03b6294da98f86
         signIn:
           resolvers:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers
@@ -96,6 +96,9 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
+    - type: file
+      target: ../../examples/entities.yaml
+
     - type: url
       target: https://github.com/diegoBrisaNet/brisaclient/blob/main/catalog-info.yaml
 
