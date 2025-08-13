@@ -15,6 +15,16 @@ spec:
   type: team
   children: []
 ---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: governanca
+  title: Governança
+spec:
+  type: team
+  children: [guests]
+---
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
@@ -102,14 +112,14 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: iury.nogueira
+  name: iurynogueira
   annotations: 
     google.com/email: iury.nogueira@grupobrisanet.com.br
 spec:
   profile:
     displayName: Iury Nogueira
     email: iury.nogueira@grupobrisanet.com.br
-  memberOf: [guests]
+  memberOf: [governanca]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
@@ -121,7 +131,7 @@ spec:
   profile:
     displayName: Jackson Martins
     email: jackson.martins@grupobrisanet.com.br
-  memberOf: [guests]
+  memberOf: [governanca]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User

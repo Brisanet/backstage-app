@@ -58,6 +58,11 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 
+import {
+  EntityGithubActionsContent,
+  isGithubActionsAvailable,
+} from '@backstage-community/plugin-github-actions';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -195,6 +200,10 @@ const websiteEntityPage = (
       {overviewContent}
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent view='cards' />
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/ci-cd" title="CI/CD">
       {cicdContent}
     </EntityLayout.Route>
@@ -235,6 +244,10 @@ const defaultEntityPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
       {overviewContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions" if={isGithubActionsAvailable}>
+      <EntityGithubActionsContent view='cards' />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/docs" title="Docs">
@@ -280,6 +293,10 @@ const apiPage = (
           </Grid>
         </Grid>
       </Grid>
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/definition" title="Definition">
