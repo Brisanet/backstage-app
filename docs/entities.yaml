@@ -53,24 +53,6 @@ spec:
   consumesApis:
     - atendimento-inovacao
 ---
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: genesys
-  title: Genesys
-  description: Genesys is an application for customer support.
-  annotations:
-    parceiro.endpoints.atendimento-inovacao: |
-      - GET /v1/clients/
-      - POST /v1/clients/register
-spec:
-  type: application
-  lifecycle: production
-  owner: atendimento
-  consumesApis:
-    - atendimento-inovacao
----
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
