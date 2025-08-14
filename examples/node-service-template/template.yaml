@@ -67,7 +67,6 @@ spec:
           owner: ${{ parameters.owner }}
           repoUrl: ${{ parameters.repoUrl }}
 
-    # AQUI ESTÁ A ÚNICA CORREÇÃO FEITA:
     - id: publish
       name: Publicando no GitHub
       action: publish:github
@@ -76,7 +75,7 @@ spec:
         description: 'Repositório para: ${{ parameters.description }}'
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: main
-        repoVisibility: public
+        repoVisibility: private
 
   
     - id: register
