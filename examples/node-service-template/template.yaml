@@ -1,0 +1,95 @@
+# yaml-language-server: $schema=https://backstage.io/schema/scaffolder/v1beta3/template-schema
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  # Mantendo seus metadados, que são mais detalhados.
+  name: node-service-template-final
+  title: Node.js Service Template
+  description: Cria um microserviço backend usando Node.js, Express.js e Docker.
+  tags:
+    - nodejs
+    - express
+    - service
+spec:
+  # Mantendo seu owner.
+  owner: team-a
+  type: service
+
+  parameters:
+    # Usando sua estrutura de formulário completa, que é excelente.
+    # Ela combina os campos de nome, dono e a localização do repositório de forma ideal.
+    - title: Detalhes do Novo Serviço
+      required:
+        - name
+        - owner
+      properties:
+        name:
+          title: Nome do Componente
+          type: string
+          description: Nome único para o componente.
+          ui:autofocus: true
+          ui:field: EntityNamePicker
+        description:
+          title: Descrição
+          type: string
+          description: Breve descrição do serviço.
+        owner:
+          title: Dono (Owner)
+          type: string
+          description: Grupo ou usuário responsável.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - User
+    - title: Configuração do Repositório
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Localização do Repositório
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    # Sua etapa 'fetch-skeleton' está perfeita, passando todos os valores para o template.
+    - id: fetch-skeleton
+      name: Buscando o Esqueleto do Template
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
+          repoUrl: ${{ parameters.repoUrl }}
+
+    - id: publish
+      name: Publicando no GitHub
+      action: publish:github
+      input:
+       
+        description: 'Repositório para: ${{ parameters.description }}'
+        repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: main
+        repoVisibility: private
+
+  
+    - id: register
+      name: Registrando no Catálogo do Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+
+  output:
+    links:
+      - title: Repositório Criado
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Abrir no Catálogo
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}

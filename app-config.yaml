@@ -107,10 +107,9 @@ catalog:
 
     # Local example template
     - type: file
-      target: ../../examples/template/template.yaml
+      target: ../../examples/node-service-template/template.yaml
       rules:
         - allow: [Template]
-
     # Local example organizational data
     - type: file
       target: ../../examples/org.yaml
