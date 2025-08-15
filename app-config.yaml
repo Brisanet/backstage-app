@@ -108,6 +108,10 @@ catalog:
       target: ../../examples/node-service-template/template.yaml
       rules:
         - allow: [Template]
+    - type: file
+      target: ../../template/node-service-template/template.yaml
+      rules:
+        - allow: [Template]
     # Local example organizational data
     - type: file
       target: ../../examples/org.yaml

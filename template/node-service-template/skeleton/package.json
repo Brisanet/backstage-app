@@ -1,0 +1,10 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "private": true,
+  "main": "src/index.js",
+    "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {}
+ 
+}

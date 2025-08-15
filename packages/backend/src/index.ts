@@ -54,5 +54,7 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
+//Scaffolder
+backend.add(import('@backstage/plugin-scaffolder-backend-module-cookiecutter'));
 
 backend.start();
