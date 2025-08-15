@@ -100,14 +100,16 @@ catalog:
       target: ../../docs/entities.yaml
 
     - type: url
-      target: https://github.com/diegoBrisaNet/brisaclient/blob/main/catalog-info.yaml
-
-    - type: url
       target: https://github.com/Brisanet/teste-backstage/blob/main/catalog-info.yaml
-
+      rules:
+        - allow: [System]
     # Local example template
     - type: file
       target: ../../examples/node-service-template/template.yaml
+      rules:
+        - allow: [Template]
+    - type: file
+      target: ../../template/node-service-template/template.yaml
       rules:
         - allow: [Template]
     # Local example organizational data

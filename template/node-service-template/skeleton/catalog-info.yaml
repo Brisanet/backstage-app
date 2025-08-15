@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1beta1
+kind: Component
+metadata:
+  name: '{{ cookiecutter.project_name }}'
+  description: '{{ cookiecutter.description }}'
+  tags:
+  - nodejs
+  - service
+  - express
+
+spec:
+  type: service
+  lifecycle: experimental
+  owner: '{{ cookiecutter.owner }}'

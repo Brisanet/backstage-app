@@ -1,0 +1,74 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: node-service-template
+  title: Node.js Service Template
+  description: Um template para criar um novo serviço Node.js com estrutura completa.
+  tags:
+    - nodejs
+    - service
+    - express
+    - web
+spec:
+  owner: user:guests
+  type: service
+  parameters:
+    - title: Nome do Projeto
+      properties:
+        name:
+          type: string
+          description: O nome do projeto a ser criado
+          ui:autofocus: true
+        description:
+          title: Descrição
+          type: string
+          description: Uma breve descrição do serviço
+        owner:
+          title: Dono do Projeto
+          type: string
+          description: O dono do componente.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds: ['Group', 'User']
+    - title: Configurações de Repositório
+      properties:
+        repoUrl:
+          title: URL do Repositório
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts: ["github.com"]
+          description: A URL do repositório onde o serviço será criado
+          ui:autofocus: true
+  steps:
+    - id: fetch-base
+      name: Buscando o Esqueleto do Projeto
+      action: fetch:cookiecutter
+      input:
+        url: ./skeleton
+        values:
+          project_name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
+      copyWithoutRender:
+       - '**/.*'
+       - '**/*.yml'
+       - '**/*.yaml'
+    - id: publish
+      name: Publicando no GitHub
+      action: publish:github
+      input:
+        description: Isto é ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
+    - id: register
+      name: Registrando no Catálogo
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+      output:
+      links:
+      - title: Repositório
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Documentação (TechDocs)
+        url: ${{ steps['register'].output.entityRef }}
